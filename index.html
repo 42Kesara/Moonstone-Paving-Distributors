@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonstone Paving & Distributors</title>
+    <style>
+        :root {
+            --primary: #228B22;
+            --primary-dark: #e65c00;
+            --secondary: #333;
+            --light: #f5f5f5;
+            --dark: #222;
+            --text-dark: #333;
+            --text-light: #f5f5f5;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color:  #fff;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            75% {
+                transform: translateX(5px);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Scroll Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.animate {
+            opacity: 1;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .fade-in-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .fade-in-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .slide-in-down {
+            animation: slideInDown 0.8s ease-out forwards;
+        }
+
+        .scale-in {
+            animation: scaleIn 0.8s ease-out forwards;
+        }
+        
+        /* Header Styles with Animations */
+        header {
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideInDown 0.5s ease-out;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover h1 {
+            transform: scale(1.05);
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            animation: fadeInRight 0.8s ease-out;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+            animation: fadeInUp 0.6s ease-out;
+            animation-delay: var(--delay, 0s);
+        }
+
+        nav ul li:nth-child(1) { --delay: 0.1s; }
+        nav ul li:nth-child(2) { --delay: 0.2s; }
+        nav ul li:nth-child(3) { --delay: 0.3s; }
+        nav ul li:nth-child(4) { --delay: 0.4s; }
+        nav ul li:nth-child(5) { --delay: 0.5s; }
+        
+        nav ul li a {
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: -2%;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+            transition: left 0.3s ease;
+        }
+
+        nav ul li a:hover::before {
+            left: 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu:hover {
+            transform: scale(1.1);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Hero Section with Enhanced Animations */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(34, 139, 34, 0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero .btn {
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        /* Services Section with Staggered Animations */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .section-title h2:hover {
+            transform: scale(1.05);
+            color: var(--primary);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: width 0.6s ease;
+        }
+
+        .section-title.animate h2::after {
+            width: 80px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:nth-child(1).animate { animation-delay: 0.1s; }
+        .service-card:nth-child(2).animate { animation-delay: 0.3s; }
+        .service-card:nth-child(3).animate { animation-delay: 0.5s; }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-img {
+            height: 600px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            transition: transform 0.4s ease;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-content h3 {
+            color: var(--primary);
+        }
+
+        /* Projects Section with Advanced Animations */
+        .projects {
+            background-color: var(--light);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .project-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) rotateY(5deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+        
+        .project-img {
+            height: 250px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.1) rotate(2deg);
+        }
+        
+        .project-category {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .project-card:hover .project-category {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .project-card:hover .project-content h3 {
+            color: var(--primary);
+        }
+
+        /* Filter Buttons with Animations */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .filter-btn:hover::before,
+        .filter-btn.active::before {
+            left: 0;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section with Counter Animation */
+        .stats {
+            background-color: var(--secondary);
+            color: var(--text-light);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s ease;
+        }
+
+        .stat-item.animate {
+            opacity: 1;
+            transform: scale(1);
+            animation: bounce 0.8s ease-out;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.1);
+        }
+        
+        .stat-item h3 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover h3 {
+            animation: pulse 1s infinite;
+        }
+
+        /* Contact Section Animations */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-form {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .contact-form.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .contact-info {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease;
+        }
+
+        .contact-info.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .contact-form form {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(34, 139, 34, 0.3);
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        .form-group input:focus + label,
+        .form-group textarea:focus + label {
+            color: var(--primary);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .contact-item:hover {
+            background-color: rgba(34, 139, 34, 0.1);
+            transform: translateX(10px);
+        }
+        
+        .contact-icon {
+            color: var(--primary);
+            font-size: 24px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            animation: bounce 0.6s ease;
+            transform: scale(1.2);
+        }
+        
+        .contact-details h4 {
+            margin-bottom: 5px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover .contact-details h4 {
+            color: var(--primary);
+        }
+        
+        .contact-details p {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        /* Video Section Animation */
+        .video-viewer {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease;
+        }
+
+        .video-viewer.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .video-container video {
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .video-container:hover video {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* Footer Animation */
+        footer {
+            background-color: var(--dark);
+            color: var(--text-light);
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Project Modal Enhanced Animations */
+        .project-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            overflow-y: auto;
+            backdrop-filter: blur(5px);
+        }
+
+        .project-modal-content {
+            background-color: #fff;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 15px;
+            max-width: 1000px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalSlideIn 0.5s ease-out;
+        }
+
+        .project-modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-modal-header h2 {
+            margin: 0;
+            font-size: 28px;
+            animation: fadeInLeft 0.6s ease-out;
+        }
+
+        .close-project-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            animation: fadeInRight 0.6s ease-out;
+        }
+
+        .close-project-modal:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+
+        .project-modal-body {
+            padding: 30px;
+        }
+
+        .project-hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease-out;
+            transition: transform 0.3s ease;
+        }
+
+        .project-hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .project-description {
+            animation: fadeInLeft 0.8s ease-out 0.2s both;
+        }
+
+        .project-features {
+            animation: fadeInRight 0.8s ease-out 0.4s both;
+        }
+
+        .project-description h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .project-description p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .project-features {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .project-features:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .project-features h4 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            padding-left: 10px;
+            background-color: rgba(34, 139, 34, 0.05);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list strong {
+            color: var(--primary);
+        }
+
+        .project-gallery {
+            margin-top: 30px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .project-gallery h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(1deg);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: white;
+            font-weight: 500;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay span {
+            transform: translateY(0);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px) scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* About Section Animations */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .about-image.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-content {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease;
+        }
+
+        .about-content.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-content h3 {
+            transition: color 0.3s ease;
+        }
+
+        .about-content:hover h3 {
+            color: var(--primary);
+        }
+
+        .about-content ul li {
+            transition: all 0.3s ease;
+        }
+
+        .about-content ul li:hover {
+            transform: translateX(10px);
+            color: var(--primary);
+        }
+        
+        /* Responsive Enhancements */
+        @media (max-width: 991px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            nav.active {
+                max-height: 400px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                animation: slideInDown 0.3s ease-out;
+                animation-delay: calc(var(--index) * 0.1s);
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                height: 60vh;
+            }
+        }
+
+        /* Responsive for modal */
+        @media (max-width: 768px) {
+            .project-modal-content {
+                width: 95%;
+                margin: 5% auto;
+            }
+
+            .project-info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-modal-header {
+                padding: 15px 20px;
+            }
+
+            .project-modal-body {
+                padding: 20px;
+            }
+
+            .project-hero-image {
+                height: 250px;
+            }
+        }
+
+        /* Custom Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth Page Transitions */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            z-index: 10000;
+            transform: translateX(-100%);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .page-transition.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition" id="pageTransition"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Moonstone<span> Paving & Distributors</span></h1>
+            </div>
+            
+            <div class="mobile-menu" onclick="toggleMobileMenu()">☰</div>
+            
+            <nav id="mobileNav">
+                <ul>
+                    <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                    <li><a href="#services" onclick="scrollToSection('services')">Services</a></li>
+                    <li><a href="#projects" onclick="scrollToSection('projects')">Projects</a></li>
+                    <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+                    <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+   <!-- Hero Section -->
+<section class="hero" id="home" style="
+    position: relative;
+    background-image: url('222.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(10, 0, 0, 35);
+">
+    <div style="
+        position: absolute;
+        top: 150;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    "></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+        <div class="hero-content">
+            <h1>BUILDING YOUR DREAMS INTO REALITY</h1>
+            <p><b>Professional construction services for residential, commercial, and industrial projects. Quality craftsmanship and reliable service since 2010.</b></p>
+            <a href="#services" class="btn" onclick="scrollToSection('services')">Our Services</a>
+        </div>
+    </div>
+</section>
+    
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Our Services</h2>
+                <p>We offer comprehensive construction solutions tailored to your needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="nawagamuwa.jpg" alt="Residential Construction" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="service-content">
+                        <h3>Residential Construction</h3>
+                        <p>Custom homes, renovations, and extensions with attention to detail and quality craftsmanship.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="Saminro.jpg" alt="Commercial Construction" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="service-content">
+                        <h3>Commercial Construction</h3>
+                        <p>Office buildings, retail spaces, and other commercial projects built to the highest standards.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="septic.jpg" alt="Industrial Construction" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="service-content">
+                        <h3>Industrial Construction</h3>
+                        <p>Factories, warehouses, and industrial facilities designed for efficiency and functionality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Own Products -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Our Own Unique Designs</h2>
+                <p>We offer our own unique designs in interlock paving and concrete works.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="10.1.jpg" alt="Residential Construction"style="width: 100%; height: 150%; object-fit: cover;">
+                    </div>
+                    <div class="service-content">
+                        <h3>UNI TYPE SMOOTH FINISH</h3>
+                        <p><b>Dimension : <br> L: 220mm / W : 110mm / H : 60mm <br> No. of Units Per Sq.ft :3.8 (approx).</b></p>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="10.4.jpg" alt="Commercial Construction"style="width: 100%; height: 150%; object-fit: cover;">
+                    </div>
+                    <div class="service-content">
+                        <h3>SMOOTH FINISH COBBEL</h3>
+                        <p><b>Dimension : <br> L: 200mm / W : 100mm / H : 60mm <br> No. of Units Per Sq.ft :4.5 (approx).</b></p>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="10.5.jpg" alt="Industrial Construction"style="width: 100%; height: 150%; object-fit: cover;">
+                    </div>
+                    <div class="service-content">
+                        <h3>SMOOTH FINISH ELIANA</h3>
+                        <p><b>Dimension : <br> L: 100mm / W : 100mm / H : 60mm <br> No. of Units Per Sq.ft :9 (approx).</b></p>
+                    </div>
+                </div>
+                
+                <!-- New service cards -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="10.6.jpg" alt="Landscape Design"style="width: 100%; height: 150%; object-fit: cover;">
+                    </div>
+                    <div class="service-content">
+                        <h3>JADDED FINISH COBBEL</h3>
+                        <p><b>Dimension : <br> L: 200mm / W : 100mm / H : 60mm <br> No. of Units Per Sq.ft :4.5 (approx).</b></p>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="10.7.jpg" alt="Driveway Solutions"style="width: 100%; height: 150%; object-fit: cover;">
+                    </div>
+                    <div class="service-content">
+                        <h3>JADDED FINISH ELIANA</h3>
+                        <p><b>Dimension : <br> L: 100mm / W : 100mm / H : 60mm <br> No. of Units Per Sq.ft :9 (approx).</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Our Projects</h2>
+                <p>Browse our portfolio of completed construction projects</p>
+            </div>
+            
+            <div class="filter-container animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="industrial">Industrial</button>
+                <button class="filter-btn" data-filter="renovation">Renovation</button>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card animate-on-scroll" data-category="residential" onclick="openProjectModal('luxury-home')">
+                    <div class="project-img">
+                        <img src="p2.jpg" alt="Luxury Home" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-category">Residential</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Luxury Home Garden Design</h3>
+                        <p>Cobbel stone smooth finish and aliana stone smooth finish job Moonstone paving & Distributors Make your Dream Garden Today.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card animate-on-scroll" data-category="commercial" onclick="openProjectModal('corporate-office')">
+                    <div class="project-img">
+                        <img src="v3.jpg" alt="Office Building" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-category">Commercial</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Corporate Office Garden Design</h3>
+                        <p>"MOONSTONE SEPTIC TANK" is a low cost,comfortable & environmental friendly sewer processing chamber.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card animate-on-scroll" data-category="residential" onclick="openProjectModal('manufacturing-plant')">
+                    <div class="project-img">
+                        <img src="4.jpg" alt="Industrial Facility" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-category">Residential</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Garden Design</h3>
+                        <p>State-of-the-art manufacturing facility with advanced technology integration.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card animate-on-scroll" data-category="residential" onclick="openProjectModal('hotel-renovation')">
+                    <div class="project-img">
+                        <img src="5.jpg" alt="Hotel Renovation" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-category">Residential</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Cobbel Stone Smooth Finish</h3>
+                        <p>Colour: Black  & Taitaniyam White.</p>
+			<p>Location : Thelagapatha, Wattala.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card animate-on-scroll" data-category="residential" onclick="openProjectModal('shopping-complex')">
+                    <div class="project-img">
+                        <img src="6.jpg" alt="Shopping Mall" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-category">Residential</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Garden Design</h3>
+                        <p>Multi-level shopping complex with entertainment areas and ample parking.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card animate-on-scroll" data-category="industrial" onclick="openProjectModal('apartment-complex')">
+                    <div class="project-img">
+                        <img src="7.jpg" alt="Apartment Complex" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-category">Industrial</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Apartment Complex</h3>
+                        <p>Modern apartment complex with 100 units and community facilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Viewer Section -->
+    <section class="video-viewer animate-on-scroll">
+        <div class="container">
+            <div class="video-container">
+                <div style="background-color: #000; height: 500px; display: flex; align-items: center; justify-content: center;">
+                    <video width="800" height="500" controls>
+                        <source src="video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>About Us</h2>
+                <p>" MOONSTONE " Professional paving distributor for commercial, residential, and industrial projects.</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image animate-on-scroll">
+                    <img src="logo.png" alt="About Us" style="width: 100%; border-radius: 10px;">
+                </div>
+                <div class="about-content animate-on-scroll">
+                    <h3>Building Excellence</h3>
+                    <p>Introduction of Moonstone as manufactures & suppliers of distinguished top quality cement concrete products. We are pre cast product manufacturing company situated at Kiribathgoda.Our cement concrete products range includes Paver block, Inter Locking block, R.C.C. Hume pipe, Septic tank, Road kerb, Fence post, Welring, Concrete door frame, Louver and other allied concrete products.</p>
+                  
+                    
+                    <div style="margin-top: 30px;">
+                        <h4>Our Core Values</h4>
+                        <ul style="list-style-type: none; padding: 0; margin-top: 10px;">
+                            <li style="margin-bottom: 10px;">✓ Quality in everything we do</li>
+                            <li style="margin-bottom: 10px;">✓ Safety as our top priority</li>
+                            <li style="margin-bottom: 10px;">✓ Integrity in all our dealings</li>
+                            <li style="margin-bottom: 10px;">✓ Innovation in our approach</li>
+                            <li>✓ Customer satisfaction guaranteed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for your next project or any inquiries</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-form animate-on-scroll">
+                    <h3 style="margin-bottom: 20px;">Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="project">Project Type</label>
+                            <select id="project" name="project" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+                                <option value="">Select Project Type</option>
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="industrial">Industrial</option>
+                                <option value="renovation">Renovation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info animate-on-scroll">
+                    <h3 style="margin-bottom: 30px;">Get in Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>No:30, Gotabaya Mawatha,<br>Hunupitiya New Rd,<br>Wattala, Sri Lanka.<br>(Head Office)</p
+                            <p style="margin-top: 60px;"> No:398/D-1,(Eriyawetiya),<br>Kiribathgoda,<br>Kelaniya, Sri Lanka.<br>(Factory)</p>
+                           
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+94 77 293 5622</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>moonstonepaving@gmail.com</p>
+                            <p>We respond within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
+                            <p>Sunday : 8:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Follow Us</h4>
+                            <p>
+                                <a href="https://www.facebook.com/share/1CroXQksTs/?mibextid=wwXIfr" target="_blank" style="color: #4267B2; font-weight: bold;">
+                                    Facebook - Moonstone Concrete Works
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Location Map -->
+            <div style="margin-top: 50px;" class="animate-on-scroll">
+                <h3 style="text-align: center; margin-bottom: 20px;">Our Location</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63373.498670812924!2d79.9070815!3d6.9819408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25807d155232b%3A0x20625a235b47b2ab!2sMoonstone%20concrete%20works!5e0!3m2!1sen!2slk!4v1715859193098!5m2!1sen!2slk" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 10px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="section stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate-on-scroll">
+                    <h3 data-target="2600">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3 data-target="25">0</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3 data-target="70">0</h3>
+                    <p>Team Members</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3 data-target="99">0</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MOONSTONE Concrete Works. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="project-modal">
+        <div class="project-modal-content">
+            <div class="project-modal-header">
+                <h2 id="modalTitle">Project Title</h2>
+                <button class="close-project-modal" onclick="closeProjectModal()">&times;</button>
+            </div>
+            <div class="project-modal-body" id="modalBody">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Project data
+        const projectData = {
+            'luxury-home': {
+                title: 'Luxury Home Garden Design',
+                heroImage: 'h1.jpg',
+                description: 'Cobbel stone smooth finish and aliana stone smooth finish job Moonstone paving & Distributors Make your Dream Garden Today." MOONSTONE " Professional paving distributor for commercial and residential projects.',
+                details: '',
+                features: {
+                    'Address': 'No:30, Gotabaya Mawatha,Hunupitiya New Rd,Wattala, Sri Lanka',
+                    'Phone': '+94 77 293 5622',
+                    'Email': 'moonstonepaving@gmail.com',
+                    'Business Hours':'<br>Monday-Friday:8:00 AM - 6:00 PM<br>Saturday:8:00 AM - 4:00PM<br>Sunday: Closed',
+                    'Follow Us': '<br>Facebook - Moonstone Concrete Works',
+                    'Professional construction services for residential, commercial, and industrial projects. Quality craftsmanship and reliable service ':' since 2010.',
+	     },
+                gallery: [
+                    { image: 'p3.jpg', caption: 'Home Garden Design' },
+                    { image: 'p4.jpg', caption: 'Home Garden Design' },
+                    { image: 'p1.jpg', caption: 'Home Garden Design' },
+                    { image: 'p2.jpg', caption: 'Home Garden Design' },
+                    { image: 'p5.jpg', caption: 'Home Garden Design' },
+                    { image: 'p6.jpg', caption: 'Home Garden Design' }
+                ]
+            },
+            'corporate-office': {
+                title: 'Corporate Office - Business District',
+                heroImage: 'v3.jpg',
+                description: '"MOONSTONE SEPTIC TANK" is a low cost,comfortable & environmental friendly sewer processing chamber.<br>Moonstone paving & Distributors.',
+                details: '',
+                features: {
+                    'Address': 'No:30, Gotabaya Mawatha,Hunupitiya New Rd,Wattala, Sri Lanka',
+                    'Phone': '+94 77 293 5622',
+                    'Email': 'moonstonepaving@gmail.com',
+                    'Business Hours':'<br>Monday-Friday:8:00 AM - 6:00 PM<br>Saturday:8:00 AM - 4:00PM<br>Sunday: Closed',
+                    'Follow Us': '<br>Facebook - Moonstone Concrete Works',
+                    'Professional construction services for residential, commercial, and industrial projects. Quality craftsmanship and reliable service ':' since 2010.',
+                },
+                gallery: [
+                    { image: 'v1.jpg', caption: 'Commercial Project' },
+                    { image: 'v2.jpg', caption: 'Commercial Project' },
+                    { image: 'v3.jpg', caption: 'Commercial Project' },
+                    { image: 'v4.jpg', caption: 'Commercial Project' },
+                    { image: 'v5.jpg', caption: 'Commercial Project' },
+                    { image: 'v6.jpg', caption: 'Commercial Project' }
+                ]
+            },
+            'manufacturing-plant': {
+                title: 'Garden design- Industrial Zone',
+                heroImage: 'g2.jpg',
+                description: '"Make your Dream Garden Today "MOONSTONE " Professional paving distributor for commercial and residential projects.',
+                details: '',
+                features: {
+                    'Address': 'No:30, Gotabaya Mawatha,Hunupitiya New Rd,Wattala, Sri Lanka',
+                    'Phone': '+94 77 293 5622',
+                    'Email': 'moonstonepaving@gmail.com',
+                    'Business Hours':'<br>Monday-Friday:8:00 AM - 6:00 PM<br>Saturday:8:00 AM - 4:00PM<br>Sunday: Closed',
+                    'Follow Us': '<br>Facebook - Moonstone Concrete Works',
+                    'Professional construction services for residential, commercial, and industrial projects. Quality craftsmanship and reliable service ':' since 2010.',
+                },
+                gallery: [
+                    { image: 'g1.jpg', caption: 'Garden design' },
+                    { image: 'g3.jpg', caption: 'Garden design' },
+                    { image: 'g5.jpg', caption: 'Garden design' },
+                    { image: 'g6.jpg', caption: 'Garden design' },
+                    { image: 'g7.jpg', caption: 'Garden design' },
+                    { image: 'g8.jpg', caption: 'Garden design' }
+                ]
+            },
+            'hotel-renovation': {
+                title: 'Industrial Project',
+                heroImage: '5.jpg',
+                description: 'Make your Dream Garden Today "MOONSTONE " Professional paving distributor for commercial and residential projects.',
+                details: '',
+                features: {
+                    'Address': 'No:30, Gotabaya Mawatha,Hunupitiya New Rd,Wattala, Sri Lanka',
+                    'Phone': '+94 77 293 5622',
+                    'Email': 'moonstonepaving@gmail.com',
+                    'Business Hours':'<br>Monday-Friday:8:00 AM - 6:00 PM<br>Saturday:8:00 AM - 4:00PM<br>Sunday: Closed',
+                    'Follow Us': '<br>Facebook - Moonstone Concrete Works',
+                    'Professional construction services for residential, commercial, and industrial projects. Quality craftsmanship and reliable service ':' since 2010.',
+                },
+                gallery: [
+                    { image: 'w1.jpg', caption: 'Garden design' },
+                    { image: 'w2.jpg', caption: 'Garden design' },
+                    { image: 'w3.jpg', caption: 'Garden design' },
+                    { image: 'w4.jpg', caption: 'Garden design' },
+                    { image: 'w5.jpg', caption: 'Garden design' },
+                    { image: 'w2.jpg', caption: 'Garden design' }
+                ]
+            },
+            'shopping-complex': {
+                title: 'Garden Project',
+                heroImage: '6.jpg',
+                description: 'A modern multi-level shopping complex featuring retail spaces, entertainment areas, and ample parking. This commercial project serves as a community hub for shopping and leisure.',
+                details: 'This shopping complex combines retail, entertainment, and dining in a modern, accessible design. The project features sustainable building practices, energy-efficient systems, and customer-focused amenities.',
+                features: {
+                    'Address': 'No:30, Gotabaya Mawatha,Hunupitiya New Rd,Wattala, Sri Lanka',
+                    'Phone': '+94 77 293 5622',
+                    'Email': 'moonstonepaving@gmail.com',
+                    'Business Hours':'<br>Monday-Friday:8:00 AM - 6:00 PM<br>Saturday:8:00 AM - 4:00PM<br>Sunday: Closed',
+                    'Follow Us': '<br>Facebook - Moonstone Concrete Works',
+                    'Professional construction services for residential, commercial, and industrial projects. Quality craftsmanship and reliable service ':' since 2010.',
+                },
+                gallery: [
+                    { image: 'a1.jpg', caption: 'Main Atrium' },
+                    { image: 'a2.jpg', caption: 'Retail Corridors' },
+                    { image: 'a3.jpg', caption: 'Food Court' },
+                    { image: 'a4.jpg', caption: 'Cinema Complex' },
+                    { image: 'a5.jpg', caption: 'Parking Structure' },
+                    { image: 'a6.jpg', caption: 'Entertainment Zone' }
+                ]
+            },
+            'apartment-complex': {
+                title: 'Industrial Projects',
+                heroImage: '7.jpg',
+                description: 'Arrow Site<br>Location : Hunupitiya new road Apartment.<br> Make your Dream Garden Today." MOONSTONE " Professional paving distributor for commercial and residential projects .',
+                details: '',
+                features: {
+                   'Address': 'No:30, Gotabaya Mawatha,Hunupitiya New Rd,Wattala, Sri Lanka',
+                    'Phone': '+94 77 293 5622',
+                    'Email': 'moonstonepaving@gmail.com',
+                    'Business Hours':'<br>Monday-Friday:8:00 AM - 6:00 PM<br>Saturday:8:00 AM - 4:00PM<br>Sunday: Closed',
+                    'Follow Us': '<br>Facebook - Moonstone Concrete Works',
+                    'Professional construction services for residential, commercial, and industrial projects. Quality craftsmanship and reliable service ':' since 2010.',
+                },
+                gallery: [
+                    { image: 'b1.jpg', caption: 'Industrial Project' },
+                    { image: 'b2.jpg', caption: 'Industrial Project' },
+                    { image: 'b3.jpg', caption: 'Industrial Project' },
+                    { image: 'b4.jpg', caption: 'Industrial Project' },
+                    { image: 'b5.jpg', caption: 'Industrial Project' },
+                    { image: 'b6.jpg', caption: 'Industrial Project' }
+                ]
+            }
+        };
+
+        // Loading animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animate');
+                }
+            });
+        }
+
+        // Counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + (target === 95 ? '%' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + (target === 95 ? '%' : '+');
+                }
+            }, 16);
+        }
+
+        // Initialize stats counter when visible
+        function initStatsCounter() {
+            const statsSection = document.querySelector('.stats');
+            const statsTop = statsSection.getBoundingClientRect().top;
+            
+            if (statsTop < window.innerHeight - 150) {
+                const statItems = document.querySelectorAll('.stat-item h3');
+                statItems.forEach((item, index) => {
+                    if (!item.classList.contains('counted')) {
+                        item.classList.add('counted');
+                        const target = parseInt(item.getAttribute('data-target'));
+                        setTimeout(() => {
+                            animateCounter(item, target);
+                        }, index * 200);
+                    }
+                });
+            }
+        }
+
+        // Page transition effect
+        function createPageTransition(callback) {
+            const transition = document.getElementById('pageTransition');
+            transition.classList.add('active');
+            
+            setTimeout(() => {
+                if (callback) callback();
+                transition.classList.remove('active');
+            }, 600);
+        }
+
+        // Enhanced mobile menu toggle
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            nav.classList.toggle('active');
+            
+            if (nav.classList.contains('active')) {
+                mobileMenu.style.animation = 'shake 0.5s ease-out';
+            } else {
+                mobileMenu.style.animation = '';
+            }
+        }
+
+        // Enhanced smooth scroll to section
+        function scrollToSection(sectionId) {
+            createPageTransition(() => {
+                const element = document.getElementById(sectionId);
+                const nav = document.getElementById('mobileNav');
+                
+                // Close mobile menu if open
+                nav.classList.remove('active');
+                
+                // Smooth scroll to section
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        }
+
+        // Enhanced project modal with animations
+        function openProjectModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            const modal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = project.title;
+
+            // Build modal content
+            modalBody.innerHTML = `
+                <img src="${project.heroImage}" alt="${project.title}" class="project-hero-image">
+                
+                <div class="project-info-grid">
+                    <div class="project-description">
+                        <h3>Project Overview</h3>
+                        <p>${project.description}</p>
+                        <p>${project.details}</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Contact Us:</h4>
+                        <ul class="feature-list">
+                            ${Object.entries(project.features).map(([key, value]) => 
+                                `<li><strong>${key}:</strong> ${value}</li>`
+                            ).join('')}
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-gallery">
+                    <h3>Project Gallery</h3>
+                    <div class="gallery-grid">
+                        ${project.gallery.map(item => `
+                            <div class="gallery-item">
+                                <img src="${item.image}" alt="${item.caption}">
+                                <div class="gallery-overlay">
+                                    <span>${item.caption}</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Enhanced close project modal
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            const modalContent = modal.querySelector('.project-modal-content');
+            
+            modalContent.style.animation = 'modalSlideOut 0.3s ease-out forwards';
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                modalContent.style.animation = '';
+            }, 300);
+        }
+
+        // Add modal slide out animation
+        const modalSlideOutCSS = `
+            @keyframes modalSlideOut {
+                from {
+                    transform: translateY(0) scale(1);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(-50px) scale(0.9);
+                    opacity: 0;
+                }
+            }
+        `;
+        const style = document.createElement('style');
+        style.textContent = modalSlideOutCSS;
+        document.head.appendChild(style);
+
+        // Enhanced project filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    projectCards.forEach((card, index) => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            setTimeout(() => {
+                                card.style.display = 'block';
+                                card.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                            }, index * 100);
+                        } else {
+                            card.style.animation = 'fadeOut 0.3s ease-out forwards';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Enhanced contact form submission
+            const contactForm = document.querySelector('#contact form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const btn = this.querySelector('.btn');
+                const originalText = btn.textContent;
+                
+                btn.textContent = 'Sending...';
+                btn.style.animation = 'pulse 1s infinite';
+                
+                setTimeout(() => {
+                    btn.style.animation = '';
+                    btn.textContent = 'Message Sent!';
+                    btn.style.backgroundColor = '#4CAF50';
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.backgroundColor = '';
+                        this.reset();
+                    }, 2000);
+                }, 1500);
+            });
+
+            // Initialize scroll animations
+            window.addEventListener('scroll', handleScrollAnimations);
+            window.addEventListener('scroll', initStatsCounter);
+            
+            // Initial check
+            handleScrollAnimations();
+            initStatsCounter();
+        });
+
+        // Add fadeOut animation
+        const fadeOutCSS = `
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                to {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+            }
+        `;
+        const fadeOutStyle = document.createElement('style');
+        fadeOutStyle.textContent = fadeOutCSS;
+        document.head.appendChild(fadeOutStyle);
+
+        // Enhanced close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Enhanced modal close functionality
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('projectModal');
+            if (e.target === modal) {
+                closeProjectModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeProjectModal();
+            }
+        });
+
+        // Add hover effects to images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '0';
+                    this.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                });
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Add entrance animation delay to elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
